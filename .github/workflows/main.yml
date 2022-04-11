@@ -1,0 +1,94 @@
+name: Main
+
+on:
+  pull_request:
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
+
+jobs:
+  check-version:
+    uses: kokoichi206/simple-to-do/.github/workflows/check-version.yml@e814f11abe5cafc2b6d442bf6b96206f9dbde58e
+
+  build:
+    runs-on: macos-latest
+    needs: [ check-version ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: xcodebuild
+              -scheme SimpleToDo
+              -sdk iphonesimulator
+              -configuration Debug
+              build
+      - name: Store cache for later uploading
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/Library/Developer/Xcode/DerivedData/*/Logs/Build/*
+            ~/Library/Developer/Xcode/DerivedData/*/Build/Products
+          key: ${{ runner.os }}-build-${{ hashFiles('./SimpleToDo.xcodeproj/project.pbxproj') }}
+          restore-keys: |
+            ${{ runner.os }}-build-
+
+  tests:
+    runs-on: macos-latest
+    needs: [ check-version ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run tests
+        run: xcodebuild
+              -scheme SimpleToDo
+              -sdk iphonesimulator
+              -destination 'platform=iOS Simulator,name=iPhone 11 Pro'
+              clean test
+
+      - name: Store cache for uploading
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/Library/Developer/Xcode/DerivedData/*/Logs/Test
+          key: ${{ runner.os }}-tests-${{ hashFiles('./SimpleToDo.xcodeproj/project.pbxproj') }}
+          restore-keys: |
+            ${{ runner.os }}-tests-
+
+  deploy:
+    runs-on: macos-latest
+    needs: [ build, tests ]
+    if: ${{ always() }}
+    steps:
+      - name: Restore cache for uploading build
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/Library/Developer/Xcode/DerivedData/*/Logs/Build/*
+            ~/Library/Developer/Xcode/DerivedData/*/Build/Products
+          key: ${{ runner.os }}-build-${{ hashFiles('./SimpleToDo.xcodeproj/project.pbxproj') }}
+          restore-keys: |
+            ${{ runner.os }}-build-
+      - name: Restore cache for uploading test logs
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/Library/Developer/Xcode/DerivedData/*/Logs/Test
+          key: ${{ runner.os }}-tests-${{ hashFiles('./SimpleToDo.xcodeproj/project.pbxproj') }}
+          restore-keys: |
+            ${{ runner.os }}-tests-
+      - name: Archive to artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Artifacts
+          path: |
+            ~/Library/Developer/Xcode/DerivedData/*/Logs/Build/*
+            ~/Library/Developer/Xcode/DerivedData/*/Build/Products
+            ~/Library/Developer/Xcode/DerivedData/*/Logs/Test
+          if: always()
+
+  swift-lint:
+    runs-on: macos-latest
+    needs: [ check-version ]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Lint code using SwiftLint
+        run: swiftlint lint --reporter github-actions-logging
