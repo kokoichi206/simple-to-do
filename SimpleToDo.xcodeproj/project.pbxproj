@@ -14,6 +14,12 @@
 		E19A3D53280473850005881B /* SimpleToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3D52280473850005881B /* SimpleToDoTests.swift */; };
 		E19A3D5D280473850005881B /* SimpleToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3D5C280473850005881B /* SimpleToDoUITests.swift */; };
 		E19A3D5F280473850005881B /* SimpleToDoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3D5E280473850005881B /* SimpleToDoUITestsLaunchTests.swift */; };
+		E19A3D842806E0D60005881B /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3D832806E0D60005881B /* TodoItem.swift */; };
+		E19A3D862806E1220005881B /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3D852806E1220005881B /* ListRowView.swift */; };
+		E19A3D882806E12E0005881B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3D872806E12E0005881B /* ListView.swift */; };
+		E19A3D8B2806ECFE0005881B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3D8A2806ECFE0005881B /* Colors.swift */; };
+		E19A3D8D2806EE4D0005881B /* HorizontalDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3D8C2806EE4D0005881B /* HorizontalDivider.swift */; };
+		E19A3D972806F3520005881B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E19A3D992806F3520005881B /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,13 @@
 		E19A3D58280473850005881B /* SimpleToDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleToDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E19A3D5C280473850005881B /* SimpleToDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleToDoUITests.swift; sourceTree = "<group>"; };
 		E19A3D5E280473850005881B /* SimpleToDoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleToDoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E19A3D832806E0D60005881B /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		E19A3D852806E1220005881B /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
+		E19A3D872806E12E0005881B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		E19A3D8A2806ECFE0005881B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		E19A3D8C2806EE4D0005881B /* HorizontalDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDivider.swift; sourceTree = "<group>"; };
+		E19A3D982806F3520005881B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E19A3D9A2806F3810005881B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +107,10 @@
 		E19A3D40280473820005881B /* SimpleToDo */ = {
 			isa = PBXGroup;
 			children = (
+				E19A3D8E2806F09D0005881B /* Resources */,
+				E19A3D892806E9B90005881B /* Util */,
+				E19A3D7F2806E0C20005881B /* Core */,
+				E19A3D7E2806E0BE0005881B /* Model */,
 				E19A3D41280473820005881B /* SimpleToDoApp.swift */,
 				E19A3D43280473820005881B /* ContentView.swift */,
 				E19A3D45280473840005881B /* Assets.xcassets */,
@@ -125,6 +142,72 @@
 				E19A3D5E280473850005881B /* SimpleToDoUITestsLaunchTests.swift */,
 			);
 			path = SimpleToDoUITests;
+			sourceTree = "<group>";
+		};
+		E19A3D7E2806E0BE0005881B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E19A3D832806E0D60005881B /* TodoItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E19A3D7F2806E0C20005881B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E19A3D802806E0C50005881B /* List */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E19A3D802806E0C50005881B /* List */ = {
+			isa = PBXGroup;
+			children = (
+				E19A3D822806E0CB0005881B /* ViewModel */,
+				E19A3D812806E0C80005881B /* View */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		E19A3D812806E0C80005881B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E19A3D852806E1220005881B /* ListRowView.swift */,
+				E19A3D872806E12E0005881B /* ListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E19A3D822806E0CB0005881B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E19A3D892806E9B90005881B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E19A3D8A2806ECFE0005881B /* Colors.swift */,
+				E19A3D8C2806EE4D0005881B /* HorizontalDivider.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		E19A3D8E2806F09D0005881B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E19A3D8F2806F0A30005881B /* Strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E19A3D8F2806F0A30005881B /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				E19A3D992806F3520005881B /* Localizable.strings */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +297,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = E19A3D35280473820005881B;
 			productRefGroup = E19A3D3F280473820005881B /* Products */;
@@ -233,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E19A3D49280473840005881B /* Preview Assets.xcassets in Resources */,
+				E19A3D972806F3520005881B /* Localizable.strings in Resources */,
 				E19A3D46280473840005881B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,7 +364,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E19A3D44280473820005881B /* ContentView.swift in Sources */,
+				E19A3D8B2806ECFE0005881B /* Colors.swift in Sources */,
+				E19A3D842806E0D60005881B /* TodoItem.swift in Sources */,
+				E19A3D882806E12E0005881B /* ListView.swift in Sources */,
 				E19A3D42280473820005881B /* SimpleToDoApp.swift in Sources */,
+				E19A3D862806E1220005881B /* ListRowView.swift in Sources */,
+				E19A3D8D2806EE4D0005881B /* HorizontalDivider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,11 +405,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		E19A3D992806F3520005881B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E19A3D982806F3520005881B /* en */,
+				E19A3D9A2806F3810005881B /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		E19A3D60280473850005881B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -381,6 +484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -438,7 +542,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleToDo/Preview Content\"";
 				DEVELOPMENT_TEAM = 9DV7HHTL73;
 				ENABLE_PREVIEWS = YES;
@@ -453,7 +557,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.3;
+				MARKETING_VERSION = 0.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.prac.SimpleToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -468,7 +572,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleToDo/Preview Content\"";
 				DEVELOPMENT_TEAM = 9DV7HHTL73;
 				ENABLE_PREVIEWS = YES;
@@ -483,7 +587,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.3;
+				MARKETING_VERSION = 0.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.prac.SimpleToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -498,11 +602,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 9DV7HHTL73;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 0.0.3;
+				MARKETING_VERSION = 0.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.prac.SimpleToDoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -518,11 +622,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 9DV7HHTL73;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 0.0.3;
+				MARKETING_VERSION = 0.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.prac.SimpleToDoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -537,10 +641,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 9DV7HHTL73;
 				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 0.0.3;
+				MARKETING_VERSION = 0.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.prac.SimpleToDoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -555,10 +659,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 9DV7HHTL73;
 				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 0.0.3;
+				MARKETING_VERSION = 0.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.prac.SimpleToDoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
