@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/*
+ Todo１つ分のView。
+ */
 struct ListRowView: View {
 
     let item: TodoItem
@@ -16,24 +19,32 @@ struct ListRowView: View {
 
     var body: some View {
 
-        VStack {
+        ZStack {
 
-            HStack {
+            VStack {
 
-                Image(systemName: item.done ? "checkmark.square" : "square")
-                    .font(.title)
-                    .foregroundColor(Color.mainFontColor)
-                    .padding(.trailing, 4)
+                HStack {
 
-                Text(item.title)
-                    .font(.title)
-                    .foregroundColor(Color.mainFontColor)
+                    Image(systemName: item.done ? "checkmark.square" : "square")
+                        .font(.title)
+                        .foregroundColor(Color.mainFontColor)
+                        .padding(.trailing, 4)
 
-                Spacer()
+                    Text(item.title)
+                        .font(.title)
+                        .foregroundColor(Color.mainFontColor)
+
+                    Spacer()
+                }
+                .padding(.vertical, paddingVertical)
+                .padding(.horizontal, paddingHorizontal)
+                .frame(maxWidth: .infinity)
             }
-            .padding(.vertical, paddingVertical)
-            .padding(.horizontal, paddingHorizontal)
-            .frame(maxWidth: .infinity)
+            
+            // 終了しているものには横線を入れる。
+            if item.done {
+                HorizontalDivider(color: Color.mainFontColor.opacity(0.3), height: 2)
+            }
         }
     }
 }
@@ -41,9 +52,9 @@ struct ListRowView: View {
 struct ListRowView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ListRowView(item: TodoItem(title: "do something", done: false))
+            ListRowView(item: TodoItem.mockItem1)
                 .background(Color.black)
-            ListRowView(item: TodoItem(title: "DONE!", done: true))
+            ListRowView(item: TodoItem.mockItem2)
                 .background(Color.black)
         }
 

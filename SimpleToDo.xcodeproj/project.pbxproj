@@ -20,6 +20,8 @@
 		E19A3D8B2806ECFE0005881B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3D8A2806ECFE0005881B /* Colors.swift */; };
 		E19A3D8D2806EE4D0005881B /* HorizontalDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3D8C2806EE4D0005881B /* HorizontalDivider.swift */; };
 		E19A3D972806F3520005881B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E19A3D992806F3520005881B /* Localizable.strings */; };
+		E19A3D9C2806F7AE0005881B /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3D9B2806F7AE0005881B /* ListViewModel.swift */; };
+		E19A3D9F2806F83D0005881B /* TodoItemMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3D9E2806F83D0005881B /* TodoItemMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		E19A3D8C2806EE4D0005881B /* HorizontalDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDivider.swift; sourceTree = "<group>"; };
 		E19A3D982806F3520005881B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E19A3D9A2806F3810005881B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E19A3D9B2806F7AE0005881B /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		E19A3D9E2806F83D0005881B /* TodoItemMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,7 @@
 		E19A3D822806E0CB0005881B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E19A3D9B2806F7AE0005881B /* ListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 		E19A3D892806E9B90005881B /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				E19A3D9D2806F82E0005881B /* Mock */,
 				E19A3D8A2806ECFE0005881B /* Colors.swift */,
 				E19A3D8C2806EE4D0005881B /* HorizontalDivider.swift */,
 			);
@@ -208,6 +214,14 @@
 				E19A3D992806F3520005881B /* Localizable.strings */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		E19A3D9D2806F82E0005881B /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				E19A3D9E2806F83D0005881B /* TodoItemMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +383,8 @@
 				E19A3D882806E12E0005881B /* ListView.swift in Sources */,
 				E19A3D42280473820005881B /* SimpleToDoApp.swift in Sources */,
 				E19A3D862806E1220005881B /* ListRowView.swift in Sources */,
+				E19A3D9C2806F7AE0005881B /* ListViewModel.swift in Sources */,
+				E19A3D9F2806F83D0005881B /* TodoItemMock.swift in Sources */,
 				E19A3D8D2806EE4D0005881B /* HorizontalDivider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
