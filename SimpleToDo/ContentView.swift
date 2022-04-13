@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    let items = [
+        TodoItem(title: "Read xxx book", done: true),
+        TodoItem(title: "Read yyy book", done: false),
+        TodoItem(title: "Wake up", done: false),
+        TodoItem(title: "Run 5km", done: false),
+        TodoItem(title: "Work", done: false)
+    ]
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ListView(items: items)
+            .ignoresSafeArea(.all)
     }
 }
 

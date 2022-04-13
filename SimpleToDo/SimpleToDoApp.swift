@@ -12,7 +12,6 @@ struct SimpleToDoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .padding()
         }
     }
 }
