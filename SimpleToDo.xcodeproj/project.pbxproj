@@ -25,6 +25,8 @@
 		E19A3DA128070DCE0005881B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DA028070DCE0005881B /* CustomTextField.swift */; };
 		E19A3DA328083C720005881B /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DA228083C720005881B /* KeyboardObserver.swift */; };
 		E19A3DA628085ABF0005881B /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DA528085ABF0005881B /* CornerRadius.swift */; };
+		E19A3DA8280872FB0005881B /* TestTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DA7280872FB0005881B /* TestTags.swift */; };
+		E19A3DA92808748E0005881B /* TestTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DA7280872FB0005881B /* TestTags.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,7 @@
 		E19A3DA028070DCE0005881B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E19A3DA228083C720005881B /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
 		E19A3DA528085ABF0005881B /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
+		E19A3DA7280872FB0005881B /* TestTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTags.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +207,7 @@
 				E19A3D8C2806EE4D0005881B /* HorizontalDivider.swift */,
 				E19A3DA028070DCE0005881B /* CustomTextField.swift */,
 				E19A3DA228083C720005881B /* KeyboardObserver.swift */,
+				E19A3DA7280872FB0005881B /* TestTags.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -403,6 +407,7 @@
 				E19A3D42280473820005881B /* SimpleToDoApp.swift in Sources */,
 				E19A3D862806E1220005881B /* ListRowView.swift in Sources */,
 				E19A3DA128070DCE0005881B /* CustomTextField.swift in Sources */,
+				E19A3DA8280872FB0005881B /* TestTags.swift in Sources */,
 				E19A3D9C2806F7AE0005881B /* ListViewModel.swift in Sources */,
 				E19A3D9F2806F83D0005881B /* TodoItemMock.swift in Sources */,
 				E19A3D8D2806EE4D0005881B /* HorizontalDivider.swift in Sources */,
@@ -421,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E19A3DA92808748E0005881B /* TestTags.swift in Sources */,
 				E19A3D5F280473850005881B /* SimpleToDoUITestsLaunchTests.swift in Sources */,
 				E19A3D5D280473850005881B /* SimpleToDoUITests.swift in Sources */,
 			);

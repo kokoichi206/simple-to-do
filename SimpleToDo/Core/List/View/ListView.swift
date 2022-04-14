@@ -24,6 +24,8 @@ struct ListView: View {
             VStack(spacing: 0) {
 
                 titleText
+                    .accessibility(addTraits: .isButton)
+                    .accessibility(identifier: TestTags.listTitle)
 
                 HorizontalDivider(color: Color.mainFontColor, height: 2)
                     .padding(.vertical, 8)
@@ -33,6 +35,8 @@ struct ListView: View {
 
             addButton
                 .padding(.vertical, 30)
+                .accessibility(addTraits: .isButton)
+                .accessibility(identifier: TestTags.addButton)
 
             if viewModel.isAdding {
                 VStack {
@@ -41,7 +45,6 @@ struct ListView: View {
                         self.text = ""
                     } onReturnClickedWithNull: {
                         viewModel.onTapReturnButtonWithNullText()
-                        print("onTapReturnButtonWithNullText")
                         self.text = ""
                     }
 
