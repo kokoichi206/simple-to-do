@@ -7,15 +7,20 @@
 
 import SwiftUI
 
+/*
+ メイン画面。
+ */
 struct ListView: View {
-
-    var items: [TodoItem]
 
     let buttonSize: CGFloat = 70
     let paddingTop: CGFloat = 40
 
+    @ObservedObject var viewModel = ListViewModel()
+
+    @State var text = ""
+
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottomTrailing) {
             VStack(spacing: 0) {
 
                 titleText
@@ -28,6 +33,21 @@ struct ListView: View {
 
             addButton
                 .padding(.vertical, 30)
+
+            if viewModel.isAdding {
+                VStack {
+                    CustomTextField(text: $text) {
+                        viewModel.onTapReturnButton(title: text)
+                        self.text = ""
+                    } onReturnClickedWithNull: {
+                        viewModel.onTapReturnButtonWithNullText()
+                        print("onTapReturnButtonWithNullText")
+                        self.text = ""
+                    }
+
+                }
+                .background(Color.clear)
+            }
         }
         .padding(.top, paddingTop)
         .background(Color.backGround)
@@ -46,58 +66,48 @@ extension ListView {
 
     var mainList: some View {
 
-        ScrollView(showsIndicators: false) {
-
-            ForEach(items) { item in
+        List {
+            ForEach(viewModel.items) { item in
                 ListRowView(item: item)
+                    .background(Color.backGround)
+                    .listRowBackground(Color.backGround)
+                    .listRowInsets(EdgeInsets())
+                    .onTapGesture {
+                        viewModel.toggleDone(item: item)
+                    }
             }
-
-            Spacer()
+            .onDelete(perform: viewModel.deleteItem)
+            .onMove(perform: viewModel.moveItem)
         }
+        .listStyle(PlainListStyle())
+        .foregroundColor(Color.mainFontColor)
     }
 
     var addButton: some View {
 
-        HStack(alignment: .bottom) {
-
-            Spacer()
-
-            VStack(alignment: .trailing) {
-
-                Spacer()
-
-                Image(systemName: "plus.circle.fill")
-                    .resizable()
-                    .frame(width: buttonSize, height: buttonSize)
-                    .foregroundColor(Color.red)
-            }
+        Button {
+            // TODO: 好きな文字を入れられるようにする。
+            viewModel.onTapAddButton()
+            print(viewModel.isAdding)
+        } label: {
+            addButtonView
         }
-        .padding()
+    }
+
+    var addButtonView: some View {
+
+        Image(systemName: "plus.circle.fill")
+            .resizable()
+            .frame(width: buttonSize, height: buttonSize)
+            .foregroundColor(Color.red)
+            .padding()
     }
 }
 
 struct ListView_Previews: PreviewProvider {
 
-    static let items = [
-        TodoItem(title: "Read xxx book", done: true),
-        TodoItem(title: "Read yyy book", done: false),
-        TodoItem(title: "Wake up", done: false),
-        TodoItem(title: "Run 5km", done: false),
-        TodoItem(title: "Work", done: false),
-        TodoItem(title: "Read xxx book", done: true),
-        TodoItem(title: "Read yyy book", done: false),
-        TodoItem(title: "Wake up", done: false),
-        TodoItem(title: "Run 5km", done: false),
-        TodoItem(title: "Work", done: false),
-        TodoItem(title: "Read xxx book", done: true),
-        TodoItem(title: "Read yyy book", done: false),
-        TodoItem(title: "Wake up", done: false),
-        TodoItem(title: "Run 5km", done: false),
-        TodoItem(title: "Work", done: false)
-    ]
-
     static var previews: some View {
-        ListView(items: items)
+        ListView()
             .ignoresSafeArea(.all)
     }
 }
