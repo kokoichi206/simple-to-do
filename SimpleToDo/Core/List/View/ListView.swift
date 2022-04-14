@@ -17,6 +17,8 @@ struct ListView: View {
 
     @ObservedObject var viewModel = ListViewModel()
 
+    @State var text = ""
+
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             VStack(spacing: 0) {
@@ -31,6 +33,21 @@ struct ListView: View {
 
             addButton
                 .padding(.vertical, 30)
+
+            if viewModel.isAdding {
+                VStack {
+                    CustomTextField(text: $text) {
+                        viewModel.onTapReturnButton(title: text)
+                        self.text = ""
+                    } onReturnClickedWithNull: {
+                        viewModel.onTapReturnButtonWithNullText()
+                        print("onTapReturnButtonWithNullText")
+                        self.text = ""
+                    }
+
+                }
+                .background(Color.clear)
+            }
         }
         .padding(.top, paddingTop)
         .background(Color.backGround)
@@ -70,7 +87,8 @@ extension ListView {
 
         Button {
             // TODO: 好きな文字を入れられるようにする。
-            viewModel.addItem(title: "hoge")
+            viewModel.onTapAddButton()
+            print(viewModel.isAdding)
         } label: {
             addButtonView
         }

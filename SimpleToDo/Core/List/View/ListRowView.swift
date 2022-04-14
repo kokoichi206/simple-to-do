@@ -40,7 +40,7 @@ struct ListRowView: View {
                 .padding(.horizontal, paddingHorizontal)
                 .frame(maxWidth: .infinity)
             }
-            
+
             // 終了しているものには横線を入れる。
             if item.done {
                 HorizontalDivider(color: Color.mainFontColor.opacity(0.3), height: 2)

@@ -13,6 +13,7 @@ import Foundation
 class ListViewModel: ObservableObject {
 
     @Published var items: [TodoItem] = []
+    @Published var isAdding = false
 
     init() {
         getItems()
@@ -23,7 +24,6 @@ class ListViewModel: ObservableObject {
      */
     func getItems() {
         // TODO: DBから持ってくるようにする。
-        items = TodoItem.mockItems
     }
 
     func deleteItem(indexSet: IndexSet) {
@@ -43,5 +43,23 @@ class ListViewModel: ObservableObject {
         if let index = items.firstIndex(where: { $0.id == item.id }) {
             items[index] = item.toggleDone()
         }
+    }
+
+    func onTapAddButton() {
+        isAdding = true
+    }
+
+    /*
+     アイテム追加キーボードの"Return"キーを押した時にtextが有限だった時の処理。
+     */
+    func onTapReturnButton(title: String) {
+        addItem(title: title)
+    }
+
+    /*
+     アイテム追加キーボードの"Return"キーを押した時にtextがNullだった時の処理。
+     */
+    func onTapReturnButtonWithNullText() {
+        self.isAdding = false
     }
 }
