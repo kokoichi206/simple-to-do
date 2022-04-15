@@ -42,6 +42,8 @@ struct CustomTextField: View {
                         .font(.title2)
                         .foregroundColor(Color.mainFontColor.opacity(0.4))
                         .padding(12)
+                        //                        .accessibility(addTraits: .isButton)
+                        .accessibility(identifier: TestTags.addText)
 
                     Spacer()
                 }
@@ -62,7 +64,6 @@ struct CustomTextField: View {
                     for: UIResponder.keyboardWillShowNotification)) { notification in
                 if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                     let keyboardHeight = keyboardFrame.cgRectValue.height
-                    print(keyboardHeight)
                     self.keyboardHeight = keyboardHeight
                 }
             }

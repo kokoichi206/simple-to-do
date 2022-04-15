@@ -6,8 +6,11 @@
 //
 
 import XCTest
+import SimpleToDo
 
 class SimpleToDoUITests: XCTestCase {
+
+    let app = XCUIApplication()
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -18,19 +21,71 @@ class SimpleToDoUITests: XCTestCase {
         // In UI tests it’s important to set the initial state
         // - such as interface orientation - required for your tests before they run.
         // The setUp method is a good place to do this.
+        app.launch()
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
+    func test_ListView_titleAndButton_displayCorrectly() {
+        // Arrange
+        let listTitle = app.buttons[TestTags.listTitle]
+        let addButton = app.buttons[TestTags.addButton]
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // Act
+
+        // Assert
+        XCTAssertTrue(listTitle.exists)
+        XCTAssertTrue(addButton.exists)
+    }
+
+    func test_ListView_tapAddButton_openAddView() {
+        // Arrange
+        let addButton = app.buttons[TestTags.addButton]
+        let addView = app.staticTexts[TestTags.addText]
+        XCTAssertFalse(addView.exists)
+
+        // Act
+        addButton.tap()
+
+        // Assert
+        XCTAssertTrue(addView.exists)
+    }
+
+    func test_ListView_firstAddView_keyboardIsOpen() {
+        // Arrange
+        let addButton = app.buttons[TestTags.addButton]
+        let addView = app.staticTexts[TestTags.addText]
+        addButton.tap()
+        XCTAssertTrue(addView.exists)
+
+        // Act
+
+        // Assert
+        XCTAssertEqual(1, app.keyboards.count)
+    }
+
+    func test_AddView_tapNextWithEmpty_closeKeyboard() {
+        // シミュレータではキーボードが開かないのでテストをスキップする
+        #if !targetEnvironment(simulator)
+        // Arrange
+        let addButton = app.buttons[TestTags.addButton]
+        let addView = app.staticTexts[TestTags.addText]
+        addButton.tap()
+        XCTAssertTrue(addView.exists)
+
+        // Act
+        if app.buttons["次へ"].exists {
+            app.buttons["次へ"].tap()
+        } else if app.buttons["next"].exists {
+            app.buttons["next"].tap()
+        }
+
+        // Assert
+        XCTAssertFalse(addView.exists)
+        XCTAssertEqual(0, app.keyboards.count)
+        #endif
     }
 
     func testLaunchPerformance() throws {
