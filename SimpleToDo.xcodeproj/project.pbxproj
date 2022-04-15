@@ -28,6 +28,8 @@
 		E19A3DA8280872FB0005881B /* TestTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DA7280872FB0005881B /* TestTags.swift */; };
 		E19A3DA92808748E0005881B /* TestTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DA7280872FB0005881B /* TestTags.swift */; };
 		E19A3DAB28087DBF0005881B /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DAA28087DBF0005881B /* UserDefaultsManager.swift */; };
+		E19A3DB1280880E90005881B /* TodoServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DB0280880E90005881B /* TodoServiceProtocol.swift */; };
+		E19A3DB3280881170005881B /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DB2280881170005881B /* TodoService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		E19A3DA528085ABF0005881B /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		E19A3DA7280872FB0005881B /* TestTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTags.swift; sourceTree = "<group>"; };
 		E19A3DAA28087DBF0005881B /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		E19A3DB0280880E90005881B /* TodoServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoServiceProtocol.swift; sourceTree = "<group>"; };
+		E19A3DB2280881170005881B /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 		E19A3D40280473820005881B /* SimpleToDo */ = {
 			isa = PBXGroup;
 			children = (
+				E19A3DAD280880C00005881B /* Service */,
+				E19A3DAC280880940005881B /* New Group */,
 				E19A3D8E2806F09D0005881B /* Resources */,
 				E19A3D892806E9B90005881B /* Util */,
 				E19A3D7F2806E0C20005881B /* Core */,
@@ -246,6 +252,38 @@
 				E19A3DA528085ABF0005881B /* CornerRadius.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E19A3DAC280880940005881B /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		E19A3DAD280880C00005881B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E19A3DAF280880CF0005881B /* Impl */,
+				E19A3DAE280880C70005881B /* Protocol */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E19A3DAE280880C70005881B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E19A3DB0280880E90005881B /* TodoServiceProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E19A3DAF280880CF0005881B /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				E19A3DB2280881170005881B /* TodoService.swift */,
+			);
+			path = Impl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +442,7 @@
 				E19A3D44280473820005881B /* ContentView.swift in Sources */,
 				E19A3D8B2806ECFE0005881B /* Colors.swift in Sources */,
 				E19A3DA628085ABF0005881B /* CornerRadius.swift in Sources */,
+				E19A3DB3280881170005881B /* TodoService.swift in Sources */,
 				E19A3DA328083C720005881B /* KeyboardObserver.swift in Sources */,
 				E19A3D842806E0D60005881B /* TodoItem.swift in Sources */,
 				E19A3D882806E12E0005881B /* ListView.swift in Sources */,
@@ -413,6 +452,7 @@
 				E19A3DA8280872FB0005881B /* TestTags.swift in Sources */,
 				E19A3DAB28087DBF0005881B /* UserDefaultsManager.swift in Sources */,
 				E19A3D9C2806F7AE0005881B /* ListViewModel.swift in Sources */,
+				E19A3DB1280880E90005881B /* TodoServiceProtocol.swift in Sources */,
 				E19A3D9F2806F83D0005881B /* TodoItemMock.swift in Sources */,
 				E19A3D8D2806EE4D0005881B /* HorizontalDivider.swift in Sources */,
 			);

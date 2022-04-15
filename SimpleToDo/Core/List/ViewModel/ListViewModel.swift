@@ -12,10 +12,19 @@ import Foundation
  */
 class ListViewModel: ObservableObject {
 
-    @Published var items: [TodoItem] = []
+    @Published var items: [TodoItem] = [] {
+        didSet {
+            saveItems()
+        }
+    }
     @Published var isAdding = false
 
-    init() {
+    let service: TodoServiceProtocol
+
+    init(service: TodoServiceProtocol = TodoService()) {
+
+        self.service = service
+
         getItems()
     }
 
@@ -23,7 +32,7 @@ class ListViewModel: ObservableObject {
      DBから値を取得する。
      */
     func getItems() {
-        // TODO: DBから持ってくるようにする。
+        items = service.loadTodoItems()
     }
 
     func deleteItem(indexSet: IndexSet) {
@@ -33,6 +42,10 @@ class ListViewModel: ObservableObject {
     func addItem(title: String) {
         let newItem = TodoItem(title: title, done: false)
         items.append(newItem)
+    }
+
+    func saveItems() {
+        service.saveTodoItems(items: items)
     }
 
     func moveItem(from: IndexSet, to: Int) {

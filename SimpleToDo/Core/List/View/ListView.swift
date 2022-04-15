@@ -89,9 +89,7 @@ extension ListView {
     var addButton: some View {
 
         Button {
-            // TODO: 好きな文字を入れられるようにする。
             viewModel.onTapAddButton()
-            print(viewModel.isAdding)
         } label: {
             addButtonView
         }

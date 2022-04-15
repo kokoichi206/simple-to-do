@@ -10,7 +10,7 @@ import Foundation
 /*
  Todo1つ分のモデル
  */
-struct TodoItem: Identifiable {
+struct TodoItem: Identifiable, Codable {
 
     let id: String
     let title: String
