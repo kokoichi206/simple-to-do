@@ -18,6 +18,7 @@ class ListViewModel: ObservableObject {
         }
     }
     @Published var isAdding = false
+    @Published var showingAlert = false
 
     let service: TodoServiceProtocol
 
@@ -74,5 +75,22 @@ class ListViewModel: ObservableObject {
      */
     func onTapReturnButtonWithNullText() {
         self.isAdding = false
+    }
+
+    func onTapDeleteButton() {
+        showingAlert = true
+    }
+
+    /*
+     ダイアログ内のキャンセルボタンが押された時の処理
+     */
+    func onTapCancelButtonInDialog() {
+    }
+
+    /*
+     ダイアログ内の削除ボタンが押された時の処理
+     */
+    func onTapDeleteButtonInDialog() {
+        self.items = []
     }
 }

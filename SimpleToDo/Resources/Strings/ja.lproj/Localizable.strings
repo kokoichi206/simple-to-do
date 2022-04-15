@@ -8,3 +8,9 @@
 
 // ListView
 "defaultTitle" = "Todo";
+
+// Title
+"dialogTitle" = "警告";
+"dialogMessage" = "全リストが削除されますがよろしいですか？";
+"dialogCancelButton" = "キャンセル";
+"dialogDeleteButton" = "削除";

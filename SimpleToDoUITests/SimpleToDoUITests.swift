@@ -88,6 +88,51 @@ class SimpleToDoUITests: XCTestCase {
         #endif
     }
 
+    func test_ListView_tapDeleteButton_openDialog() {
+        // Arrange
+        let deleteButton = app.buttons[TestTags.deleteButton]
+        let testBundle = Bundle(for: type(of: self ))
+        let title = NSLocalizedString("dialogTitle", bundle: testBundle, value: "Done", comment: "")
+
+        // Act
+        deleteButton.tap()
+
+        // Assert
+        XCTAssertTrue(app.staticTexts[title].exists)
+    }
+
+    func test_Dialog_tapCancelButton_closeDialog() {
+        // Arrange
+        let deleteButton = app.buttons[TestTags.deleteButton]
+        let testBundle = Bundle(for: type(of: self ))
+        let title = NSLocalizedString("dialogTitle", bundle: testBundle, value: "", comment: "")
+        deleteButton.tap()
+        XCTAssertTrue(app.staticTexts[title].exists)
+        let cancelButton = NSLocalizedString("dialogCancelButton", bundle: testBundle, value: "", comment: "")
+
+        // Act
+        app.buttons[cancelButton].tap()
+
+        // Assert
+        XCTAssertFalse(app.staticTexts[title].exists)
+    }
+
+    func test_Dialog_tapDeleteButton_closeDialog() {
+        // Arrange
+        let deleteButton = app.buttons[TestTags.deleteButton]
+        let testBundle = Bundle(for: type(of: self ))
+        let title = NSLocalizedString("dialogTitle", bundle: testBundle, value: "", comment: "")
+        deleteButton.tap()
+        XCTAssertTrue(app.staticTexts[title].exists)
+        let cancelButton = NSLocalizedString("dialogDeleteButton", bundle: testBundle, value: "", comment: "")
+
+        // Act
+        app.buttons[cancelButton].tap()
+
+        // Assert
+        XCTAssertFalse(app.staticTexts[title].exists)
+    }
+
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.

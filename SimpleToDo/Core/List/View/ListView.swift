@@ -23,9 +23,7 @@ struct ListView: View {
         ZStack(alignment: .bottomTrailing) {
             VStack(spacing: 0) {
 
-                titleText
-                    .accessibility(addTraits: .isButton)
-                    .accessibility(identifier: TestTags.listTitle)
+                topBar
 
                 HorizontalDivider(color: Color.mainFontColor, height: 2)
                     .padding(.vertical, 8)
@@ -54,10 +52,45 @@ struct ListView: View {
         }
         .padding(.top, paddingTop)
         .background(Color.backGround)
+        .alert(isPresented: $viewModel.showingAlert) {
+            Alert(title: Text("dialogTitle"),
+                  message: Text("dialogMessage"),
+                  primaryButton: .cancel(
+                    Text("dialogCancelButton"), action: {
+                        viewModel.onTapCancelButtonInDialog()
+                    }
+                  ),
+                  secondaryButton: .destructive(
+                    Text("dialogDeleteButton"), action: {
+                        viewModel.onTapDeleteButtonInDialog()
+                    }
+                  )
+            )
+        }
     }
 }
 
 extension ListView {
+
+    var topBar: some View {
+
+        ZStack(alignment: .trailing) {
+
+            titleText
+                .accessibility(addTraits: .isButton)
+                .accessibility(identifier: TestTags.listTitle)
+                .frame(maxWidth: .infinity)
+
+            Button {
+                viewModel.onTapDeleteButton()
+            } label: {
+                Image(systemName: "trash.fill")
+                    .font(.title2)
+            }
+            .accessibility(identifier: TestTags.deleteButton)
+        }
+        .padding(.horizontal, 16)
+    }
 
     var titleText: some View {
 

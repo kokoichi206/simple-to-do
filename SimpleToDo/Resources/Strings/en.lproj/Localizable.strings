@@ -8,3 +8,9 @@
 
 // ListView
 "defaultTitle" = "Todo";
+
+// Title
+"dialogTitle" = "Alert";
+"dialogMessage" = "Are you sure you want to delete all list?";
+"dialogCancelButton" = "Cancel";
+"dialogDeleteButton" = "Delete";
