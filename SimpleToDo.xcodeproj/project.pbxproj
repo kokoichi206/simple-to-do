@@ -131,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				E19A3DAD280880C00005881B /* Service */,
-				E19A3DAC280880940005881B /* New Group */,
 				E19A3D8E2806F09D0005881B /* Resources */,
 				E19A3D892806E9B90005881B /* Util */,
 				E19A3D7F2806E0C20005881B /* Core */,
@@ -258,13 +257,6 @@
 				E19A3DA528085ABF0005881B /* CornerRadius.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		E19A3DAC280880940005881B /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		E19A3DAD280880C00005881B /* Service */ = {
