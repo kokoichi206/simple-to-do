@@ -85,13 +85,12 @@ class ListViewModel: ObservableObject {
      ダイアログ内のキャンセルボタンが押された時の処理
      */
     func onTapCancelButtonInDialog() {
-        print("onTapCancelButtonInDialog")
     }
 
     /*
      ダイアログ内の削除ボタンが押された時の処理
      */
     func onTapDeleteButtonInDialog() {
-        print("onTapDeleteButtonInDialog")
+        self.items = []
     }
 }
