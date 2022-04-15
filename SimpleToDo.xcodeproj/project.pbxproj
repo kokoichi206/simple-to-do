@@ -644,7 +644,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.6;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.prac.SimpleToDo;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.SimpleToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -674,7 +674,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.6;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.prac.SimpleToDo;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.SimpleToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -693,7 +693,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 0.0.6;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.prac.SimpleToDoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.SimpleToDoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -713,7 +713,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 0.0.6;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.prac.SimpleToDoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.SimpleToDoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -731,7 +731,7 @@
 				DEVELOPMENT_TEAM = 9DV7HHTL73;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 0.0.6;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.prac.SimpleToDoUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.SimpleToDoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -749,7 +749,7 @@
 				DEVELOPMENT_TEAM = 9DV7HHTL73;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 0.0.6;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.prac.SimpleToDoUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.mydns.kokoichi0206.SimpleToDoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
