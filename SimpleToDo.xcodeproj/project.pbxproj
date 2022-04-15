@@ -33,6 +33,8 @@
 		E19A3DB52808827E0005881B /* MockTodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DB42808827E0005881B /* MockTodoService.swift */; };
 		E19A3DB7280883250005881B /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DB6280883250005881B /* ListViewModelTests.swift */; };
 		E19A3DBA2809A9B10005881B /* Localizable.strings in Sources */ = {isa = PBXBuildFile; fileRef = E19A3D992806F3520005881B /* Localizable.strings */; };
+		E19A3DBC2809C4A30005881B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DBB2809C4A30005881B /* String.swift */; };
+		E19A3DBE2809C5170005881B /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DBD2809C5170005881B /* StringExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		E19A3DB2280881170005881B /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
 		E19A3DB42808827E0005881B /* MockTodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTodoService.swift; sourceTree = "<group>"; };
 		E19A3DB6280883250005881B /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
+		E19A3DBB2809C4A30005881B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		E19A3DBD2809C5170005881B /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,7 @@
 				E19A3D52280473850005881B /* SimpleToDoTests.swift */,
 				E19A3DB42808827E0005881B /* MockTodoService.swift */,
 				E19A3DB6280883250005881B /* ListViewModelTests.swift */,
+				E19A3DBD2809C5170005881B /* StringExtensionTests.swift */,
 			);
 			path = SimpleToDoTests;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 			children = (
 				E19A3D8A2806ECFE0005881B /* Colors.swift */,
 				E19A3DA528085ABF0005881B /* CornerRadius.swift */,
+				E19A3DBB2809C4A30005881B /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -452,6 +458,7 @@
 				E19A3DAB28087DBF0005881B /* UserDefaultsManager.swift in Sources */,
 				E19A3D9C2806F7AE0005881B /* ListViewModel.swift in Sources */,
 				E19A3DB1280880E90005881B /* TodoServiceProtocol.swift in Sources */,
+				E19A3DBC2809C4A30005881B /* String.swift in Sources */,
 				E19A3D9F2806F83D0005881B /* TodoItemMock.swift in Sources */,
 				E19A3D8D2806EE4D0005881B /* HorizontalDivider.swift in Sources */,
 			);
@@ -461,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E19A3DBE2809C5170005881B /* StringExtensionTests.swift in Sources */,
 				E19A3D53280473850005881B /* SimpleToDoTests.swift in Sources */,
 				E19A3DB52808827E0005881B /* MockTodoService.swift in Sources */,
 				E19A3DB7280883250005881B /* ListViewModelTests.swift in Sources */,

@@ -130,7 +130,7 @@ struct MyUITextView: UIViewRepresentable {
         func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
             // \n は『return』を意味する。
             if text == "\n" {
-                if textView.text.count == 0 {
+                if textView.text.isBlank {
                     // 何も入力がない場合、キーボードを閉じる。
                     textView.resignFirstResponder()
                     parent.onReturnClickedWithNull()
