@@ -88,6 +88,30 @@ class SimpleToDoUITests: XCTestCase {
         #endif
     }
 
+    func test_AddView_tapNextWithBlank_closeKeyboard() {
+        // シミュレータではキーボードが開かないのでテストをスキップする
+        #if !targetEnvironment(simulator)
+        // Arrange
+        let addButton = app.buttons[TestTags.addButton]
+        let addView = app.staticTexts[TestTags.addText]
+        addButton.tap()
+        XCTAssertTrue(addView.exists)
+
+        // Act
+        if app.buttons["次へ"].exists {
+            app.keys["　"].tap()
+            app.buttons["次へ"].tap()
+        } else if app.buttons["next"].exists {
+            app.keys[" "].tap()
+            app.buttons["next"].tap()
+        }
+
+        // Assert
+        XCTAssertFalse(addView.exists)
+        XCTAssertEqual(0, app.keyboards.count)
+        #endif
+    }
+
     func test_ListView_tapDeleteButton_openDialog() {
         // Arrange
         let deleteButton = app.buttons[TestTags.deleteButton]
