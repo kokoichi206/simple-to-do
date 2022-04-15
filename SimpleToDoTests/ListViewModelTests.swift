@@ -160,4 +160,15 @@ class MyListViewModelTests: XCTestCase {
         // Assert
         XCTAssertTrue(mockService.isSaveTodoItemsCalled)
     }
+
+    func test_ViewModel_onTapDeleteButtonInDialog_deleteAllItems() {
+        // Arrange
+        XCTAssertFalse(viewModel.items.isEmpty)
+
+        // Act
+        viewModel.onTapDeleteButtonInDialog()
+
+        // Assert
+        XCTAssertTrue(viewModel.items.isEmpty)
+    }
 }
