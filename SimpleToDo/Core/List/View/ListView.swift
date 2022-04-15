@@ -87,6 +87,7 @@ extension ListView {
                 Image(systemName: "trash.fill")
                     .font(.title2)
             }
+            .accessibility(identifier: TestTags.deleteButton)
         }
         .padding(.horizontal, 16)
     }

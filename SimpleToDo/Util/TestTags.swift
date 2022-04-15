@@ -11,4 +11,6 @@ struct TestTags {
     static let listTitle = "list_title"
     static let addButton = "add_button"
     static let addText = "add_text"
+
+    static let deleteButton = "delete_button"
 }
