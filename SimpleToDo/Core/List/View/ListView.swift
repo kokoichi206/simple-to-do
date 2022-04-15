@@ -52,6 +52,21 @@ struct ListView: View {
         }
         .padding(.top, paddingTop)
         .background(Color.backGround)
+        .alert(isPresented: $viewModel.showingAlert) {
+            Alert(title: Text("dialogTitle"),
+                  message: Text("dialogMessage"),
+                  primaryButton: .cancel(
+                    Text("dialogCancelButton"), action: {
+                        viewModel.onTapCancelButtonInDialog()
+                    }
+                  ),
+                  secondaryButton: .destructive(
+                    Text("dialogDeleteButton"), action: {
+                        viewModel.onTapDeleteButtonInDialog()
+                    }
+                  )
+            )
+        }
     }
 }
 
@@ -67,6 +82,7 @@ extension ListView {
                 .frame(maxWidth: .infinity)
 
             Button {
+                viewModel.onTapDeleteButton()
             } label: {
                 Image(systemName: "trash.fill")
                     .font(.title2)
