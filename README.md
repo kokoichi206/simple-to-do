@@ -2,8 +2,14 @@
 
 # simple-to-do
 
-## メイン画面
+## Main Screen
 <img src="docs/readme/main.png" width=300>
+
+
+https://user-images.githubusercontent.com/52474650/163609042-61840636-a13f-4efa-b385-15ad920b3038.mp4
+
+## Others
+[Documents](https://kokoichi206.github.io/simple-to-do/)
 
 ## License
 "count-down-timer" is under [MIT License](LICENSE).
