@@ -10,7 +10,7 @@ import Foundation
 /*
  Todo1つ分のモデル
  */
-struct TodoItem: Identifiable, Codable {
+struct TodoItem: Identifiable, Codable, Equatable {
 
     let id: String
     let title: String
@@ -29,4 +29,5 @@ struct TodoItem: Identifiable, Codable {
     func toggleDone() -> TodoItem {
         return TodoItem(id: id, title: title, done: !done)
     }
+
 }

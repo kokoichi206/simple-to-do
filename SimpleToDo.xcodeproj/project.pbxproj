@@ -30,6 +30,8 @@
 		E19A3DAB28087DBF0005881B /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DAA28087DBF0005881B /* UserDefaultsManager.swift */; };
 		E19A3DB1280880E90005881B /* TodoServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DB0280880E90005881B /* TodoServiceProtocol.swift */; };
 		E19A3DB3280881170005881B /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DB2280881170005881B /* TodoService.swift */; };
+		E19A3DB52808827E0005881B /* MockTodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DB42808827E0005881B /* MockTodoService.swift */; };
+		E19A3DB7280883250005881B /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A3DB6280883250005881B /* ListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		E19A3DAA28087DBF0005881B /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		E19A3DB0280880E90005881B /* TodoServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoServiceProtocol.swift; sourceTree = "<group>"; };
 		E19A3DB2280881170005881B /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
+		E19A3DB42808827E0005881B /* MockTodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTodoService.swift; sourceTree = "<group>"; };
+		E19A3DB6280883250005881B /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				E19A3D52280473850005881B /* SimpleToDoTests.swift */,
+				E19A3DB42808827E0005881B /* MockTodoService.swift */,
+				E19A3DB6280883250005881B /* ListViewModelTests.swift */,
 			);
 			path = SimpleToDoTests;
 			sourceTree = "<group>";
@@ -463,6 +469,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E19A3D53280473850005881B /* SimpleToDoTests.swift in Sources */,
+				E19A3DB52808827E0005881B /* MockTodoService.swift in Sources */,
+				E19A3DB7280883250005881B /* ListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
