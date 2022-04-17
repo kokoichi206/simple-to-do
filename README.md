@@ -12,4 +12,4 @@ https://user-images.githubusercontent.com/52474650/163609042-61840636-a13f-4efa-
 [Documents](https://kokoichi206.github.io/simple-to-do/)
 
 ## License
-"count-down-timer" is under [MIT License](LICENSE).
+"simple-to-do" is under [MIT License](LICENSE).
